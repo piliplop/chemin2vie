@@ -12,31 +12,37 @@ const mapDispatchToProps = dispatch => ({
 const styles = theme => ({
 	root: {
 		height: '100%',
-		boxShadow: '3px 3px 2px #4f5256',
+		// boxShadow: '3px 3px 2px #4f5256',
 	},
 	list: {
 		height: '100%',
-		background: 'gray'
+		background: '#007090'
 	},
 	text: {
-		color: 'white'
+		color: 'white',
+		lineHeight: '1.5'
+	},
+	list_item: {
 	}
 });
 
 const LeftMenu = ({ classes, changeTab }) => (
 	<div className={classes.root}>
 		<List component="nav" className={classes.list}>
-			<ListItem button onClick={() => {changeTab(TABS.formation);}}>
-				<ListItemText classes={{text: classes.text}}>Formation</ListItemText>
+			<ListItem button onClick={() => {changeTab(TABS.formation);}} className={classes.list_item}>
+				<ListItemText disableTypography className={classes.text}>Formation</ListItemText>
 			</ListItem>
-			<ListItem button onClick={() => {changeTab(TABS.competences);}}>
-				<ListItemText className={classes.text}>Compétences</ListItemText>
+			<hr></hr>
+			<ListItem button onClick={() => {changeTab(TABS.competences);}} className={classes.list_item}>
+				<ListItemText disableTypography className={classes.text}>Compétences</ListItemText>
 			</ListItem>
-			<ListItem button onClick={() => {changeTab(TABS.experiences);}}>
-				<ListItemText className={classes.text}>Expériences professionnelles</ListItemText>
+			<hr></hr>
+			<ListItem button onClick={() => {changeTab(TABS.experiences);}} className={classes.list_item}>
+				<ListItemText disableTypography className={classes.text}>Expériences professionnelles</ListItemText>
 			</ListItem>
-			<ListItem button onClick={() => {changeTab(TABS.interests);}}>
-				<ListItemText className={classes.text}>Centres d'intérêt</ListItemText>
+			<hr></hr>
+			<ListItem button onClick={() => {changeTab(TABS.interests);}} className={classes.list_item}>
+				<ListItemText disableTypography className={classes.text}>Centres d'intérêt</ListItemText>
 			</ListItem>
 		</List>
 	</div>

@@ -7,19 +7,19 @@ import { withStyles } from '@material-ui/core/styles';
 const styles = theme => ({
 	pic: {
 		height: '100%',
-		marginTop: '5%'
+		// marginTop: '5%'
 	},
 	cont: {
-		backgroundColor: '#003a99',
+		backgroundColor: '#16425b',
 		color: 'white',
-		boxShadow: '3px 3px 2px #4f5256',
+		// boxShadow: '3px 3px 2px #4f5256',
 	}
 });
 
 const mapStateToProps = state => ({});
 
 const ConnectedHeader = ({classes}) => (
-	<Grid container spacing={24} className={classes.cont}>
+	<Grid container spacing={0} className={classes.cont}>
 		<Grid item xs={10}>
 			{/* <Paper className={classes.title}> */}
 			<h1>Jules Sang</h1>

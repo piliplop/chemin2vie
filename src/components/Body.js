@@ -12,6 +12,11 @@ import { withStyles } from '@material-ui/core/styles';
 const styles = theme => ({
 	root: {
 		height: '100%',
+		background: '#456990',
+	},
+	item: {
+		marginLeft: '24px',
+		color: 'red'
 	}
 });
 
@@ -22,21 +27,23 @@ const mapStateToProps = state => ({
 
 const ConnectedBody = ({current_tab, classes}) => {
 	return (
-		<Grid container spacing={24} className={classes.root}>
+		<Grid container spacing={0} className={classes.root}>
 			<Grid item xs={2}>
 				<LeftMenu />
 			</Grid>
 			<Grid item xs={10}>
-				{(() => {
-					switch (current_tab){
-					// no break needed because of return
-					case TABS.formation: return <Formation />;
-					case TABS.competences: return <Competences />;
-					case TABS.experiences: return <Experiences />;
-					case TABS.interests: return <Interets />;
-					default: return null;
-					}
-				})()}
+				<div className={classes.item}>
+					{(() => {
+						switch (current_tab){
+						// no break needed because of return
+						case TABS.formation: return <Formation />;
+						case TABS.competences: return <Competences />;
+						case TABS.experiences: return <Experiences />;
+						case TABS.interests: return <Interets />;
+						default: return null;
+						}
+					})()}
+				</div>
 			</Grid>
 		</Grid>
 	);};
