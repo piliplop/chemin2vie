@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Competences = () => (
-	<p>Compet</p>
-);
+const Competences = () => {
+	return <h1>Competences</h1>;
+};
 
 export default Competences;

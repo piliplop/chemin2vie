@@ -1,4 +1,4 @@
-import { CHANGE_TAB } from '../actions/actions'; 
+import { CHANGE_TAB, TOGGLE_MENU } from '../actions/actions';
 
 export const TABS = {
 	formation: 0,
@@ -8,7 +8,8 @@ export const TABS = {
 };
 
 const initialState = {
-	current_tab: TABS.formation
+	current_tab: TABS.formation,
+	menu_open: false,
 };
   
 const rootReducer = (state = initialState, action) => {
@@ -17,6 +18,10 @@ const rootReducer = (state = initialState, action) => {
 	case CHANGE_TAB: return {
 		...state,
 		current_tab: action.payload
+	};
+	case TOGGLE_MENU: return {
+		...state,
+		menu_open: !state.menu_open,
 	};
 	default: return state;
 	}
