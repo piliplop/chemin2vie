@@ -18,16 +18,7 @@ const mapDispatchToProps = dispatch => ({
 });
 
 const styles = theme => ({
-	root: {
-		height: '100%',
-		overflow: 'hidden'
-	},
-	button_menu: {
-		color: 'red',
-	},
-	menu: {
-		// top: '0'
-	}
+	
 });
 
 const App = ({classes}) =>  {
@@ -35,10 +26,10 @@ const App = ({classes}) =>  {
 		<div className={classes.root}>
 			<MyMenu />
 			<Header />
-			{/* <Formation />
+			<Formation />
 			<Competences />
 			<Experience />
-			<Interests /> */}
+			<Interests />
 		</div>
 	);
 };
@@ -46,15 +37,14 @@ const App = ({classes}) =>  {
 const MyMenuConnected = withStyles(styles)(({classes, toggleMenu, menu_open}) => {
 	return (
 		<div>
-			<Button onClick={toggleMenu} className={classes.button_menu}>
+			<Button id="menu_button" onClick={toggleMenu} className={classes.button_menu}>
 			Open menu
 			</Button>
-			<Menu anchorOrigin={{vertical: 'top', horizontal: 'left'}}
-				transformOrigin={{vertical: 'top', horizontal: 'left'}}
-				id="menu" open={menu_open} onClose={toggleMenu} className={classes.menu}>
-				<MenuItem>Yo</MenuItem>
-				<MenuItem>Ma</MenuItem>
-				<MenuItem>Ggle</MenuItem>
+			<Menu id="menu" open={menu_open} onClose={toggleMenu} anchorEl={document.getElementById('menu_button')} >
+				<MenuItem>Formation</MenuItem>
+				<MenuItem>Compétences</MenuItem>
+				<MenuItem>Expériences professionnelles</MenuItem>
+				<MenuItem>Centres d'intérêt</MenuItem>
 			</Menu>
 		</div>
 	);
